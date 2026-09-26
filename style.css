@@ -1,0 +1,211 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.35),rgba(22, 11, 11, 0.3)),url('img.png');
+}
+
+
+:root{
+    --back_color : rgba(0,0,0,0.35);
+    --hover_color:rgba(0,0,0,0.35);
+    --standard_transform: translateY(-1.5px);
+}
+
+
+/* NAVIGATION BAR */
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+    
+    background-color: var(--back_color);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 9999;
+
+}
+
+.logo{
+    color: #00ff88;
+    letter-spacing: 0.5px;
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgba(255,255,255,0.75);
+    font-weight: bold;
+    outline: none;
+    border-radius: none;
+    padding: 5px 7px;
+    display: inline-block;      /*for applying transform*/
+}
+
+nav ul li a:hover{
+    color: #fff;
+    border-radius: 25px;
+    background-color:var(--hover_color);
+    outline: none;
+    transform: translateY(-1.5px);
+}
+
+nav button{
+    padding:10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.75);
+    background-color: transparent;
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 4px;
+
+}
+
+nav button:hover{
+    background-color: var(--hover_color);
+    cursor: pointer;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+
+/* Signup overlay */
+
+.modal-overlay{
+
+    position: fixed;
+    inset: 0;
+
+    background-color: var(--back_color);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+}
+
+.modal-overlay.active{
+    display: flex;
+}
+
+.signup-modal,.loginModal{
+    width: 50vh;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    padding: 30px;
+    color: white;
+
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.signup-modal h2, .loginModal h2{
+    color: #f5a623;
+    margin-bottom:8px;
+}
+
+.signup-modal p, .loginModal p{
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+}
+
+.close-modal,.closeLogin-modal{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    border: none;
+    background: none;
+    color: white;
+    font: 20px;
+    cursor: pointer;
+}
+
+.signup-field{
+    margin-bottom: 10px;
+}
+
+.signup-field input{
+
+    width: 100%;
+    padding:14px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: white;
+    font-size: 15px;
+}
+
+.signup-submit{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: #f5a623;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.switch-text{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.switch-text span{
+    color: #f5a623;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.switch-text span:hover{
+    text-decoration: underline;
+}
+
+
+/* Login overlay */
+
+.loginOverlay{
+    
+    display: none;
+
+    position:fixed;
+    inset: 0;
+    
+    background-color: var(--back_color);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+}
+
+.loginOverlay.active{
+    display: flex;
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    .modal-overlay{
+    display:none;
+    position: fixed;
+    inset: 0;
+
+    background-color: aqua;
+}
+
+.signup-modal{
+  width: 50%;
+  height: 50%;
+  background-color: aquamarine;
+  justify-content: center;
+  align-items: center;
+  display: flex ;
+}
+
+.modal-overlay.active{
+    display:flex;
+}
+  </style>
+  <body>
+      <div class="modal-overlay active">
+
+    <div class="signup-modal">
+
+        <input type="text">
+
+        <button>Submit</button>
+
+    </div>
+
+</div>
+      <!-- <script src="script.js"></script> -->
+
+      <script>
+        document.addEventListener("click",(e)=>{
+          console.log(e.target)
+    // if(e.target.classList.contains("modal-overlay")){
+    //     e.target.classList.remove("active");
+    });
+
+// });
+      </script>
+  </body>
+</html>
